@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface Product {
   id: string;
@@ -23,6 +23,7 @@ interface CartContext {
   decrement(id: string): void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 const CartContext = createContext<CartContext | null>(null);
 
 const CartProvider: React.FC = ({ children }) => {

@@ -15,7 +15,7 @@ jest.mock('../../hooks/cart.tsx', () => ({
 
 jest.mock('../../utils/formatValue.ts', () => ({
   __esModule: true,
-  default: jest.fn().mockImplementation(value => value),
+  default: jest.fn().mockImplementation((value) => value),
 }));
 
 import Cart from '../../pages/Cart';
@@ -66,11 +66,6 @@ describe('Dashboard', () => {
     const { getByText } = render(<Cart />);
 
     expect(getByText('8000')).toBeTruthy();
-  });
-
-  it('should be able to calculate the cart total', async () => {
-    const { getByText } = render(<Cart />);
-
     expect(getByText('15 itens')).toBeTruthy();
   });
 

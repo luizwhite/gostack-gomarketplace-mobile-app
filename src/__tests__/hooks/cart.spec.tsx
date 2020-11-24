@@ -14,7 +14,7 @@ import {
 
 jest.useFakeTimers();
 
-jest.mock('@react-native-community/async-storage', () => ({
+jest.mock('@react-native-async-storage/async-storage', () => ({
   __esModule: true,
   default: {
     setItem: jest.fn(),
@@ -24,7 +24,7 @@ jest.mock('@react-native-community/async-storage', () => ({
   },
 }));
 
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CartProvider, useCart } from '../../hooks/cart';
 
 const TestComponent: React.FC = () => {
@@ -36,7 +36,6 @@ const TestComponent: React.FC = () => {
       title: 'Test product',
       image_url: 'test',
       price: 1000,
-      quantity: 0,
     });
   }
 
@@ -62,7 +61,7 @@ const TestComponent: React.FC = () => {
         Decrement
       </TouchableOpacity>
 
-      {products.map(product => (
+      {products.map((product) => (
         <View key={product.id}>
           <Text>{product.title}</Text>
           <Text>{product.quantity}</Text>
@@ -139,7 +138,7 @@ describe('Cart Context', () => {
 
   it('should load products from AsyncStorage', async () => {
     mockedAsyncStorage.getItem.mockReturnValue(
-      new Promise(resolve =>
+      new Promise((resolve) =>
         resolve(
           JSON.stringify([
             {
