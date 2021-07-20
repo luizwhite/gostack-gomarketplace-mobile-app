@@ -18,7 +18,7 @@
     "intl": "latest",
     "json-server": "^0.16.1",
     "react": "16.13.1",
-    "react-native": "0.63.3",
+    "react-native": "0.64.1",
     "react-native-gesture-handler": "latest",
     "react-native-iphone-x-helper": "latest",
     "react-native-reanimated": "latest",
